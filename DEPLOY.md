@@ -31,3 +31,7 @@ V1.5
 - Fixed: the "solve for / subject" dropdown no longer types letters into the equation box
 - Answers are typeset like a textbook (stacked fractions, square roots, boxed answer)
 - "Show workings" button hides/shows the step-by-step; 2-equation systems use the multiply-and-subtract method
+
+V1.6 (Part 2)
+- New tools: Area, Volume, Slope, Calorie, Statistics, Permutation & Combination, Sequence, Logarithm, Exponent, Surd, Matrix, Inequality, Word Problem Solver
+- source/tools2.js holds these tools; to add a tool, ask Claude
