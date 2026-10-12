@@ -39,3 +39,8 @@ V1.6 (Part 2)
 V1.7 (Part 3: Physics)
 - New: 13 physics tools + Physics page (physics.html); dark mode now applies instantly on every page; contact email added
 - source/physics.js holds the physics tools
+
+V1.8 (Part 4)
+- Pages now load shared files from the assets folder (much faster). To test on your computer, keep the whole folder together.
+- New: install as an app (works after the site is on https), works offline for visited pages, favourites and recently used tools, report-a-mistake button
+- See GO-LIVE-GUIDE.md for the launch steps
