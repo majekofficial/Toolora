@@ -35,3 +35,7 @@ V1.5
 V1.6 (Part 2)
 - New tools: Area, Volume, Slope, Calorie, Statistics, Permutation & Combination, Sequence, Logarithm, Exponent, Surd, Matrix, Inequality, Word Problem Solver
 - source/tools2.js holds these tools; to add a tool, ask Claude
+
+V1.7 (Part 3: Physics)
+- New: 13 physics tools + Physics page (physics.html); dark mode now applies instantly on every page; contact email added
+- source/physics.js holds the physics tools
