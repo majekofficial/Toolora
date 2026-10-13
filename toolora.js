@@ -80,7 +80,7 @@ function initTool(){const slug=document.body.dataset.slug;if(!slug)return;const 
  $('#calculate').addEventListener('click',()=>calculate(slug));extra(slug,form);features(slug,form,t);
  form.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName!=='TEXTAREA'){e.preventDefault();calculate(slug)}})
 }
-const GA_ID='';
+const GA_ID='G-94F924B79M';
 const ls={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
 const CURS=['₦','$','£','C$','A$','₹','R'];
 let CUR=ls.get('cur')||(/-NG/i.test(navigator.language)?'₦':/-GB/i.test(navigator.language)?'£':/-IN/i.test(navigator.language)?'₹':/-ZA/i.test(navigator.language)?'R':'$');
@@ -101,7 +101,7 @@ function initChrome(){
 }
 function features(slug,form,t){
  const cb=$('#calculate');if(cb)cb.style.display='none';
- const OPT=['age','saved','people','hi','msearch'];let tm;const live=()=>{if(SOLVERS[slug]){SOLVERS[slug].run();return}const miss=[...form.querySelectorAll('input[id],textarea[id]')].some(e=>!OPT.includes(e.id)&&e.value.trim()==='');if(miss){setResult('—');return}calculate(slug,true);clearTimeout(tm);tm=setTimeout(()=>{const r=$('#result strong');if(r&&r.textContent!=='—')track('calculation',{tool:slug})},1200)};
+ const OPT=['age','saved','people','hi','msearch'];let tm;const live=()=>{if(SOLVERS[slug]){SOLVERS[slug].run();clearTimeout(tm);tm=setTimeout(()=>{const r=$('#result strong');if(r&&r.textContent.trim()!=='—')track('calculation',{tool:slug})},1200);return}const miss=[...form.querySelectorAll('input[id],textarea[id]')].some(e=>!OPT.includes(e.id)&&e.value.trim()==='');if(miss){setResult('—');return}calculate(slug,true);clearTimeout(tm);tm=setTimeout(()=>{const r=$('#result strong');if(r&&r.textContent!=='—')track('calculation',{tool:slug})},1200)};
  form.addEventListener('input',live);form.addEventListener('change',e=>{if(e.target.tagName==='SELECT')live()});
  const q=new URLSearchParams(location.search);
  if(q.get('u')==='us'){const b=form.querySelector('.tab[data-u=us]');if(b)b.click()}
@@ -113,6 +113,8 @@ function features(slug,form,t){
  exportUI(slug,form,t,txt,flash,copy);
  track('tool_view',{tool:slug});
 }
+
+
 
 
 
